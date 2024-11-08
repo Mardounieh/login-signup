@@ -13,6 +13,7 @@ import bgImage from "./assets/pictures/codewall.jpg";
 
 // css
 import "./App.css";
+import Form from "./components/form/Form";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       </div>
       <main>
         <article>
-          <div className="introduction">
+          <div className="introduction flex flex-col justify-between">
             <div className="flex flex-col midGap">
               <div className="flex flex-col minGap">
                 <h2>Start your 30-day free trial</h2>
@@ -68,7 +69,7 @@ function App() {
           <div className="login">
             <div className="flex flex-col items-center minGap full-width">
               <span className="text-slate">Register with:</span>
-              <div className="flex justify-center minGap full-width">
+              <div className="flex logOptionParent justify-center minGap full-width">
                 <button className="pointer logOption text-slate flex minGap items-center font-sm transition">
                   <FaGoogle /> Google
                 </button>
@@ -85,32 +86,7 @@ function App() {
               <span className="font-sm text-slate">OR</span>
               <hr />
             </div>
-            <form action="POST" className="flex flex-col full-width">
-              <div className="flex justify-center minGap">
-                <div className="flex flex-col minGap">
-                  <label htmlFor="firstname" className="font-sm text-slate">
-                    First Name
-                  </label>
-                  <div className="flex items-center minGap inputContainer transition">
-                    <MdPersonAddAlt className="traitIcon"/>
-                    <input
-                      type="text"
-                      id="firstname"
-                      placeholder="First Name"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col minGap">
-                  <label htmlFor="lastname" className="font-sm text-slate">
-                    Last Name
-                  </label>
-                  <div className="flex items-center minGap inputContainer transition">
-                    <MdPersonAddAlt className="traitIcon"/>
-                    <input type="text" id="lastname" placeholder="Last Name" />
-                  </div>
-                </div>
-              </div>
-            </form>
+            <Form />
           </div>
         </article>
       </main>

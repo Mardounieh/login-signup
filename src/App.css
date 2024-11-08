@@ -134,6 +134,9 @@ textarea:not([rows]) {
 .text-slate {
   color: rgb(232, 227, 227);
 }
+.text-start {
+  text-align: start;
+}
 .half-width {
   width: 55%;
 }
@@ -197,6 +200,7 @@ article {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  padding: 2em 0 0 0;
 }
 .traitIcon {
   color: rgb(35, 224, 154);
@@ -212,7 +216,7 @@ article {
   align-items: center;
   width: 55%;
   border-radius: 10px;
-  padding: 1em;
+  padding: 2em;
   gap: 1em;
 }
 .logOption {
@@ -236,7 +240,7 @@ hr {
   border:1px solid rgba(173, 173, 173, 0.369);
 }
 .inputContainer:focus-within {
-  border: 1px solid rgba(173, 173, 173, 0.624);
+  border: 1px solid rgba(113, 172, 147, 0.778);
 }
 .inputContainer input {
   width: 100%;
@@ -245,4 +249,68 @@ hr {
 }
 .inputContainer input::placeholder {
   color: rgb(148, 148, 148);
+}
+.submit {
+  margin-top: 1em;
+  width: 100%;
+  padding: .3em 0em;
+  border-radius: 5px;
+  color: white;
+  background: rgb(35, 224, 154);
+  cursor: pointer;
+  transition: all .5s;
+}
+.submit:hover {
+  background: rgb(26, 168, 116);
+}
+.submit:active {
+  transform: scale(.95);
+}
+.important {
+  color: white;
+  text-decoration: underline;
+}
+.log {
+  color: rgb(35, 224, 154);
+  transition: all .5s;
+}
+.log:hover {
+  color: rgb(26, 168, 116);
+}
+
+@media screen and (max-width: 1190px) {
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .login p {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1124px) {
+  .introduction {
+    display: none;
+  }
+  .login {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 460px) {
+  .login {
+    padding: .5em;
+  }
+  .logOption {
+    font-size: 12px;
+  }
+  .nameSectionContainer {
+    flex-direction: column;
+  }
+}
+@media screen and (orientation: portrait) {
+  main {
+    width: 90%;
+    padding: .5em;
+  }
 }

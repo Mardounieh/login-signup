@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  min-width: 320px;
   min-height: 100vh;
   background: radial-gradient(200% 100% at 50% 0%,rgb(12, 176, 102) -40%,rgb(1, 12, 8) 50%);
 }

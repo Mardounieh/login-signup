@@ -41,7 +41,6 @@ ol[role="list"] {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   line-height: 1.5;
 }
 
@@ -179,9 +178,8 @@ button:hover {
 }
 main {
   width: 70%;
+  max-height: 90%;
   height: fit-content;
-  padding-block: 1.5rem;
-  padding-inline: 2.5rem;
   border: 1px solid #00791e78;
   color: white;
   background: rgba(255, 255, 255, 0.051);
@@ -189,18 +187,22 @@ main {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 article {
   display: flex;
+  width: 90%;
+  padding: 1em 0;
 }
 
 /* Introduction styles */
-.introduction {
-  width: 50%;
+.introductionSection {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  padding: 2em 0 0 0;
+  justify-content: space-between;
+  padding: 1em 0;
 }
 .traitIcon {
   color: rgb(35, 224, 154);
@@ -214,10 +216,10 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 55%;
+  max-width: 55%;
   border-radius: 10px;
-  padding: 2em;
   gap: 1em;
+  padding: 1em 0;
 }
 .logOption {
   background: rgba(177, 177, 177, 0.264);
@@ -234,12 +236,18 @@ hr {
 }
 
 /* Form styles */
+.inputParent {
+  position: relative;
+}
 .inputContainer {
   padding: .3em 0 .3em .5em;
   border-radius: 5px;
   border:1px solid rgba(173, 173, 173, 0.369);
 }
-.inputContainer:focus-within {
+.invalidInput {
+  border: 1px solid rgba(180, 78, 78, 0.778);
+}
+.validInput {
   border: 1px solid rgba(113, 172, 147, 0.778);
 }
 .inputContainer input {
@@ -249,6 +257,12 @@ hr {
 }
 .inputContainer input::placeholder {
   color: rgb(148, 148, 148);
+}
+.error {
+  position: absolute;
+  top: 100%;
+  font-size: 14px;
+  color: rgb(219, 71, 71);
 }
 .submit {
   margin-top: 1em;
@@ -288,13 +302,19 @@ hr {
   .login p {
     text-align: center;
   }
+  p[class="error"] {
+    text-align: start;
+  }
 }
 @media screen and (max-width: 1124px) {
-  .introduction {
+  article {
+    justify-content: center;
+  }
+  .introductionSection {
     display: none;
   }
   .login {
-    width: 100%;
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 460px) {

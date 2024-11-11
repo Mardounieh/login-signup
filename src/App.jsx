@@ -23,7 +23,7 @@ function App() {
       </div>
       <main>
         <article>
-          <div className="introduction flex flex-col justify-between">
+          <div className="introductionSection">
             <div className="flex flex-col midGap">
               <div className="flex flex-col minGap">
                 <h2>Start your 30-day free trial</h2>
@@ -81,7 +81,7 @@ function App() {
                 </button>
               </div>
             </div>
-            <div className="flex items-center minGap full-width">
+            <div className="flex items-center minGap my-width">
               <hr />
               <span className="font-sm text-slate">OR</span>
               <hr />
